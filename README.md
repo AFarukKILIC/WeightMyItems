@@ -23,7 +23,7 @@ devtools::install_github("AFarukKILIC/WeightMyItems")
 
 ``` r
 library(WeightMyItems)
-WeightMyItems(x)
+item_weighting(x)
 #x is a data frame
 ```
 
