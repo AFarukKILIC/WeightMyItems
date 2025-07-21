@@ -14,7 +14,6 @@
 #'   individual (each row).
 #' @export
 #' @examples
-#' \dontrun{
 #' # Generate sample dichotomous data
 #' set.seed(123)
 #' my_data <- as.data.frame(
@@ -32,7 +31,6 @@
 #' unweighted_means <- rowMeans(my_data)
 #' cat("\n--- Unweighted Mean Scores (Head) ---\n")
 #' print(head(unweighted_means))
-#' }
 weighted_mean_score <- function(x, threshold = 1) {
 
   # Step 1: Weight the data using the provided item_weighting function.
