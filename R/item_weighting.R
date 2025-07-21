@@ -1,7 +1,7 @@
-#' Item Weighting According to the Kılıç & Doğan (2019) Method
+#' Item Weighting According to the Kilic & Dogan (2019) Method
 #'
 #' This function weights an item-response matrix using the method proposed by
-#' Kılıç & Doğan (2019). The method is based on adding the item reliability
+#' Kilic & Dogan (2019). The method is based on adding the item reliability
 #' index (corrected item-total correlation) to the original score if the sum
 #' of the person's average score and the item's difficulty index exceeds a
 #' certain threshold (default is 1).
@@ -17,7 +17,6 @@
 #' @export
 #' @importFrom psychometric item.exam
 #' @examples
-#' \dontrun{
 #' ## Example 1: Dichotomous Data (as in the original study)
 #' set.seed(123)
 #' n_students_dich <- 200
@@ -55,7 +54,6 @@
 #' weighted_likert <- item_weighting(likert_data)
 #' cat("\n--- Weighted 5-Point Likert Data (Head) ---\n")
 #' print(head(weighted_likert))
-#' }
 item_weighting <- function(x, threshold = 1) {
 
   # Input checks
@@ -95,10 +93,10 @@ item_weighting <- function(x, threshold = 1) {
   # --- Corrected Conditional Weighting using Logical Indexing ---
   # 1. Start with a copy of the original data as a matrix.
   weighted_data <- as.matrix(x)
-  
+
   # 2. Identify which cells meet the condition. This creates a logical matrix (TRUE/FALSE).
   update_cells <- condition_matrix >= threshold
-  
+
   # 3. Update only the cells where the condition is TRUE.
   #    The values from (original_data + weight_matrix) are used for the update.
   #    This preserves the matrix structure, unlike ifelse().
